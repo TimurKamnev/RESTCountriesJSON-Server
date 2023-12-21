@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header h1 {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: #d7dffe;
+  margin: 0;
+}
+
+.capitan {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.countries img {
+  width: 100%;
+  max-height: 150px;
+  min-height: 150px;
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px;
+}
+
+.countries-div {
+  width: 100%;
+}
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  position: relative;
+  height: 100%;
+  min-height: 350px;
+}
+
+.css-1t6e9jv-MuiCardActions-root {
+  position: absolute;
+  bottom: 0;
+}
+
+.pagination {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.css-o69gx8-MuiCardMedia-root {
+  object-fit: none !important;
+  height: 100%;
+}
+
+.loading__text {
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+}
+
+.css-wjh20t-MuiPagination-ul {
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 995px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 460px) {
+  .countries {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .css-1ri6ub7-MuiPaper-root-MuiCard-root{
+    max-width: 410px !important;
+  }
+}

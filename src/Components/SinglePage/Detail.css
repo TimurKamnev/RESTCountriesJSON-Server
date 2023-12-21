@@ -1,0 +1,46 @@
+.container {
+  margin-top: 30px;
+  display: grid;
+  place-items: center;
+}
+.cardHeader span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dotCon {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.MuiCardActions-root {
+  gap: 10px;
+}
+
+.parentBackBtn {
+  display: flex;
+  justify-content: center;
+  margin-block: 10px;
+}
+
+.backBtn {
+  top: 140px;
+  left: 120px;
+  background: #d7dffe;
+  border-radius: 20px;
+  width: 65px;
+  height: 33px;
+  transition: 250ms ease-in-out;
+}
+.backBtn:hover {
+  background: rgb(164, 175, 255);
+}
+
+.backBtn a {
+  display: block;
+  padding: 7px 16px;
+  color: black;
+}
