@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Layout} from '../Layout.tsx'
-import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
@@ -11,7 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <BrowserRouter>
             <Layout />
         </BrowserRouter>
-        <ReactQueryDevtools />
     </QueryClientProvider>
-
 )

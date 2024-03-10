@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import DetailCountry from './Components/SinglePage/DetailCountry';
 import RestCountries from "./Components/Countries/Countries.tsx";
 

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,28 +7,29 @@ import { Button, CardActionArea, CardActions, Pagination, Stack } from '@mui/mat
 import './RestCountries.css';
 import useFetchCountriesQuery from "../../Hooks/useFetchCountriesQuery.tsx";
 import {Country} from "../../Types/Country.ts";
+import { useState } from 'react';
 
-// const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 12;
 
 const RestCountries = () => {
-    const { isLoading, isError, data = [] } = useFetchCountriesQuery();
-    // const [countries] = useState([]);
-    // const [currentPage, setCurrentPage] = useState(() => {
-    //     const storedPage = sessionStorage.getItem('currentPage');
-    //     return storedPage ? parseInt(storedPage, 10) : 1;
-    // });
-    //
-    // const totalPages = Math.ceil(countries.length / ITEMS_PER_PAGE);
-    //
-    // const paginatedCountries = countries.slice(
-    //     (currentPage - 1) * ITEMS_PER_PAGE,
-    //     currentPage * ITEMS_PER_PAGE
-    // );
+    const { data = [] } = useFetchCountriesQuery();
+    const [countries] = useState([]);
+    const [currentPage, setCurrentPage] = useState(() => {
+        const storedPage = sessionStorage.getItem('currentPage');
+        return storedPage ? parseInt(storedPage, 10) : 1;
+    });
+    
+    const totalPages = Math.ceil(countries.length / ITEMS_PER_PAGE);
+    
+    const paginatedCountries = countries.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
 
-    // const handlePageChange = (page: number) => {
-    //     setCurrentPage(page);
-    //     sessionStorage.setItem('currentPage', page.toString());
-    // };
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        sessionStorage.setItem('currentPage', page.toString());
+    };
 
     return (
         <div className='capitan'>
@@ -66,17 +66,17 @@ const RestCountries = () => {
                     </Card>
                 ))}
             </div>
-            {/*<div className='pagination'>*/}
-            {/*    <Stack spacing={2}>*/}
-            {/*        <Pagination*/}
-            {/*            count={totalPages}*/}
-            {/*            page={currentPage}*/}
-            {/*            onChange={(_, page) => handlePageChange(page)}*/}
-            {/*            showFirstButton*/}
-            {/*            showLastButton*/}
-            {/*        />*/}
-            {/*    </Stack>*/}
-            {/*</div>*/}
+            <div className='pagination'>
+                <Stack spacing={2}>
+                    <Pagination
+                        count={totalPages}
+                        page={currentPage}
+                        onChange={(_, page) => handlePageChange(page)}
+                        showFirstButton
+                        showLastButton
+                    />
+                </Stack>
+            </div>
         </div>
     );
 };
